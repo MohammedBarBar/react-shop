@@ -5,7 +5,7 @@
 // const ex4 = (arr || []).length;
 const initState = {
   items: [],
-  addedItems: [] || 0,
+  addedItems: [],
   total: 0,
 };
 function shuffle(array) {
@@ -60,6 +60,12 @@ const cartReducer = (state = initState, action) => {
   if (action.type === "ADD_TO_CART") {
     // console.log(state.items);
     // console.log(action.id);
+    if (document.getElementById(state.items.idProducts)) {
+      return {
+        ...state,
+        total: state.total,
+      };
+    }
     let addedItem = state.items.find((item) => item.idProducts === action.id);
     addedItem.price = Number.parseInt(addedItem.price);
     //check if the action id exists in the addedItems
