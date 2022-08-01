@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from './logo.svg';
+// import './App.css';
+import Nav from './components/Navbar';
+import { Route,Switch, Redirect } from "react-router-dom";
+import {BrowserRouter} from 'react-router-dom';
+import NotFound from './components/NotFound';
+// import React, { Component } from 'react';
+import React from 'react';
+import Home from './components/Home';
+import Cart from './components/Cart';
+import Category from './components/category';
+import Main from './components/Main';
+import addOrder from './components/addOrder';
+import login from './components/login';
+import Admin from './components/Admin';
+import addProduct from './components/addProduct';
+import addCategory from './components/addCategory';
 function App() {
   return (
+    <React.Fragment>
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      
+        <Nav></Nav>
+      <Category></Category>
+        <Switch>
+        <Route path="/Main" component={Main}></Route>
+        <Route path="/login" component={login}></Route>
+        <Route path="/addCategory/:id" component={addCategory}></Route>
+        <Route path="/addCategory" component={addCategory}></Route>
+        <Route path="/addProduct/:id" component={addProduct}></Route>
+        <Route path="/addProduct" component={addProduct}></Route>
+        <Route path="/admin/:id" component={Admin}></Route>
+        <Route path="/home/:id" component={Home} />
+        <Route path="/home" component={Home} />
+        <Route path="/addOrder" component={addOrder} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/not-found" component={NotFound} />
+         <Redirect from="/" exact to="/home" />
+        <Redirect to="/not-found" />
+
+        </Switch>
+        </div>
+        </BrowserRouter>
+     </React.Fragment>
+
   );
 }
 

@@ -1,0 +1,9 @@
+{
+    "UserApi":"http://127.0.0.1/shop/APIUsers.php",
+    "AdminApi":"http://127.0.0.1/shop/APIsAdmin.php",
+    "ProductApi":"http://127.0.0.1/shop/APIProducts.php",
+    "CategoryApi":"http://127.0.0.1/shop/APIsCategory.php",
+    "CartApi":"http://127.0.0.1/shop/APIsCart.php",
+    "CartItemsApi":"http://127.0.0.1/shop/APIsCartItems.php",
+    "OrderApi":"http://127.0.0.1/shop/APIsOrder.php"
+}
