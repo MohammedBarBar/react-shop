@@ -22,20 +22,26 @@ class categor extends Component {
       <nav className="nav-wrapper navbar navbar-scroll">
         <div className="container">
           <ul className="center">
-            <Link to="/home" className="catItems">
+            <Link to="/react-shop" className="catItems">
               <li>Home</li>
             </Link>
             {/* <div>Categories Available :  */}
             {this.state.isLoaded &&
               this.state.category.map((cat, index) => (
-                <Link to={"/home/" + (index + 1)} className="catItems">
+                <Link to={"/react-shop/" + (index + 1)} className="catItems">
                   <li>{cat.categoriesName}</li>
                 </Link>
               ))}
-              <li><Link className="AdminPannel" to="/login"><span className="material-icons AdminPannel">admin_panel_settings</span>Admin</Link></li>
+            <li>
+              <Link className="AdminPannel" to="/login">
+                <span className="material-icons AdminPannel">
+                  admin_panel_settings
+                </span>
+                Admin
+              </Link>
+            </li>
           </ul>
         </div>
-        
       </nav>
     );
   }

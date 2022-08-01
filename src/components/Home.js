@@ -179,7 +179,7 @@ class Home extends Component {
           </div>
         );
       } else {
-        let itemList = "";
+        let itemList = [];
         return (
           <div className="container">
             <ToastContainer autoClose={1500}></ToastContainer>
